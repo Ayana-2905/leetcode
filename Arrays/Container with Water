@@ -1,0 +1,33 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int max =0;
+        int left=0,right = height.length-1;
+        while(left<right){
+            max=Math.max(max, (right-left)*Math.min(height[left],height[right]));
+            if(height[left]<height[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return max;
+    }
+}
+/*
+class Solution {
+    public int maxArea(int[] H) {
+        int ans = 0, i = 0, j = H.length-1, res = 0;
+        while (i < j) {
+            if (H[i] <= H[j]) {
+                res = H[i] * (j - i);
+                i++;
+            } else {
+                res = H[j] * (j - i);
+                j--;
+            }
+            if (res > ans) ans = res;
+        }
+        return ans;
+    }
+}
+*/
