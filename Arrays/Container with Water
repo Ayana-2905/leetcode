@@ -13,7 +13,8 @@ class Solution {
         return max;
     }
 }
-/*
+
+/* Method 2
 class Solution {
     public int maxArea(int[] H) {
         int ans = 0, i = 0, j = H.length-1, res = 0;
